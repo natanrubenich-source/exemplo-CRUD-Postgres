@@ -1,0 +1,5 @@
+# dependências instaladas
+node_modules/
+
+# variáveis de ambiente — NUNCA enviar ao Git
+.env
