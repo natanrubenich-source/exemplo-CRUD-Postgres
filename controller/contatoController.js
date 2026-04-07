@@ -23,7 +23,7 @@ export async function buscarPorID(req, res) {
   }
 }
 
-export async function criarContato(req, res) {
+export async function criarUsuario(req, res) {
   //id, nome, telefone e email, senha.
   const { nome, telefone, email, senha } = req.body;
 

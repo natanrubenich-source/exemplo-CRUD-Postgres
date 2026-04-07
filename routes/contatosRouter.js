@@ -1,14 +1,14 @@
 import { Router } from "express";
 import * as controller from "../controller/contatoController.js";
 
-const routerContatos = Router();
+const routerUsuarios = Router();
 
 // ROTAS PUBLICAS
-routerContatos.post("/cadastrarUsuario", controller.criarContato); 
-routerContatos.post("/login", controller.login);
+routerUsuarios.post("/cadastrarUsuario", controller.criarUsuario); 
+routerUsuarios.post("/login", controller.login);
 
-// Privadas
-routerContatos.get("/", controller.listar); // Converter para privada
-routerContatos.get("/:id", controller.buscarPorID); // Converter para privada
+// Privadas - Em construção
+routerUsuarios.get("/", controller.listar); // Converter para privada
+routerUsuarios.get("/:id", controller.buscarPorID); // Converter para privada
 
-export default routerContatos;
+export default routerUsuarios;
