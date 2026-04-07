@@ -16,8 +16,9 @@ export function autenticar(req, res, next){
     try {
         const validarToekn = jwt.verify(token, process.env.JTW_SECRET); //Verificando se o token é valido
         req.usuario = validarToekn //disponibilizo os dados do token na requisição
-        next();
+        console.log("Conteúdo do req.usuario: ", req.usuario);
         
+        next();
     } catch (error) {
         res.status(401).json({erro: "Token inválido"});
     }

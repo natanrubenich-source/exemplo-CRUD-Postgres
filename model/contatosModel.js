@@ -57,3 +57,14 @@ export async function loginModule(email, senha) {
     return error;
   }
 }
+
+export async function perfilModule(email) {
+  try {
+    const resUser = await pool.query(`SELECT * FROM usuarios WHERE email=$1`, [email]);
+    return resUser.rows[0];
+    
+  } catch (error) {
+    console.log("Erro ao consultar no banco de dados: ", error);
+    return error;
+  }
+}

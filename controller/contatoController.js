@@ -71,5 +71,13 @@ export async function login(req, res) {
 }
 
 export async function perfilController(req, res) {
-  
+
+  const {email} = req.body;
+  if (!email) {
+    res.status(422).json({ mensagem: "Dados incompletos!" });
+  }
+
+  // Retorna todos os dados do usuario (row do BD)
+  const resPerfil = await module.perfilModule(email);
+  res.status(200).json(resPerfil);
 }
