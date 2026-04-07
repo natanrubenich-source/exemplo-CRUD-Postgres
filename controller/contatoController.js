@@ -69,3 +69,7 @@ export async function login(req, res) {
     return res.status(404).json({ erro: "Erro ao processar a requisição"});
   }
 }
+
+export async function perfilController(req, res) {
+  
+}
